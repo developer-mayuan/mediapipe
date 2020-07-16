@@ -3,7 +3,7 @@
     {
       "label": "Build hand_tracking_cpu (Debug)",
       "type": "shell",
-      "command": "bazelisk build -c dbg --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu",
+      "command": "bazelisk build -c dbg --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu --sandbox_debug",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -22,7 +22,7 @@
     {
       "label": "Build hand_tracking_cpu (Release)",
       "type": "shell",
-      "command": "bazelisk build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu",
+      "command": "bazelisk build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu --sandbox_debug",
       "group": {
         "kind": "build",
         "isDefault": true
