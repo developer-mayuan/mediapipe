@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.inc": "cpp",
+        "*.txx": "cpp"
+    },
+    "cmake.configureOnOpen": false
+}

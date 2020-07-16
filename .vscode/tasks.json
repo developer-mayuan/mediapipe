@@ -1,0 +1,42 @@
+{
+  "tasks": [
+    {
+      "label": "Build hand_tracking_cpu (Debug)",
+      "type": "shell",
+      "command": "bazelisk build -c dbg --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+
+    {
+      "label": "Run hand_tracking_cpu (Release)",
+      "type": "shell",
+      "command": "bazel-bin/mediapipe/examples/desktop/hand_tracking/hand_tracking_cpu",
+      "args": [
+        "--calculator_graph_config_file=mediapipe/graphs/hand_tracking/hand_tracking_desktop_live.pbtxt"
+      ]
+    },
+
+    {
+      "label": "Build hand_tracking_cpu (Release)",
+      "type": "shell",
+      "command": "bazelisk build -c opt --define MEDIAPIPE_DISABLE_GPU=1 mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+
+    {
+      "label": "Run hand_tracking_gpu (Release)",
+      "type": "shell",
+      "command": "bazel-bin/mediapipe/examples/desktop/hand_tracking/hand_tracking_gpu",
+      "args": [
+        "--calculator_graph_config_file=mediapipe/graphs/hand_tracking/hand_tracking_desktop_live.pbtxt"
+      ]
+    }
+  ],
+  "version": "2.0.0"
+}
